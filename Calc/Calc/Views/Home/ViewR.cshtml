@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "ViewR";
+    Layout = "";
+}
+<table>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Вычисления", "Calc")</td>
+    </tr>  
+</table>
+<ol>
+    @foreach (Calc.Models.Mathr it in ViewBag.Items)
+    {
+        <li>@it.res</li>
+    }
+</ol>
+
