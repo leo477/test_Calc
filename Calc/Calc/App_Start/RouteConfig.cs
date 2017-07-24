@@ -12,7 +12,7 @@ namespace Calc
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            //Создаем правила для нашего проекта
             routes.MapRoute(
                  "Home-Calc",
                  "",
@@ -21,26 +21,13 @@ namespace Calc
              routes.MapRoute(
                  "Home-Result",
                  "Home/Result.aspx",
-                 new { controller = "Home", action = "Result" }
+                 new { controller = "Home", action = "Result" } //Правило для обработки результата
                  );
-
-            routes.MapRoute(
-                 "Home-AddBase",
-                 "Home/AddBase.aspx",
-                 new { controller = "Home", action = "AddBase" }
-                 );
-            /*routes.MapRoute (
-                  name:  "Default",
-                url:"{home}/{action}/{id}",
-               defaults: new {controller ="Home", action="ViewR", id=UrlParameter.Optional}
-                    );*/
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-
         }
 
         
